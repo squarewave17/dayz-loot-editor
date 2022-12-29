@@ -16,11 +16,17 @@
 </script>
 
 <template>
-  <div className="flex flex-col justify-between h-screen">
+  <div className="flex flex-col h-screen">
     <Navbar />
-    <main className="container grow mx-auto px-3 pb-12">
+    <main className="grid grid-cols-main grid-rows-main grow">
+      <div id="main-top" className="container mx-auto col-span-3">top</div>
+      <div id="main-left" className="card bg-base-300 mx-3 p-3 shadow-xl"></div>
       <router-view />
+      <div
+        id="main-right"
+        className="card bg-base-300 mx-3 p-3 shadow-xl"
+      ></div>
     </main>
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>

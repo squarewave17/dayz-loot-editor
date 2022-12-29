@@ -1,6 +1,5 @@
 <template>
-  <FileUpload v-if="!globalStore.hasData" />
-  <EditorTable v-else />
+  <FileUpload v-if="!globalStore.hasData" /> <EditorTable v-else />
 </template>
 <script setup>
   import { useGlobalStore } from "../store/globalStore";

@@ -1,5 +1,5 @@
 <template>
-  <nav className="navbar mb-12 shadow-lg bg-neutral text-neutral-content">
+  <nav className="navbar mb-2 shadow-lg bg-neutral text-neutral-content">
     <div className="container mx-auto">
       <div className="flex px-2 mx-2 items-center">
         <Logo className="inline pr-2" />

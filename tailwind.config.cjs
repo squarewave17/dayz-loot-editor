@@ -10,6 +10,14 @@ module.exports = {
       "3xl": "2.827rem",
       "4xl": "3.998rem",
     },
+    extend: {
+      gridTemplateColumns: {
+        main: "200px 1fr 200px;",
+      },
+      gridTemplateRows: {
+        main: "50px 1fr",
+      },
+    },
   },
   plugins: [require("daisyui")],
 };
