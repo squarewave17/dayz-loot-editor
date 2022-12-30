@@ -1,0 +1,18 @@
+const vehicles = [
+  "CivilianSedan",
+  "CivilianSedan_Black",
+  "CivilianSedan_Wine",
+  "Hatchback_02",
+  "Hatchback_02_Black",
+  "Hatchback_02_Blue",
+  "OffroadHatchback",
+  "OffroadHatchback_Blue",
+  "OffroadHatchback_White",
+  "Offroad_02",
+  "Sedan_02",
+  "Sedan_02_Grey",
+  "Sedan_02_Red",
+  "Truck_01_Covered",
+  "Truck_01_Covered_Blue",
+  "Truck_01_Covered_Orange",
+];
