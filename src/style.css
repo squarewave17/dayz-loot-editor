@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --color-dark: #191d24;
+  --color-dark-100: #2a303c;
+  --color-dark-200: #242933;
+  --color-dark-300: #1f242d;
+  --color-text-light: #a6adba;
+  --color-text-dim: #a6adba56;
+  --color-info: #3abff8;
+  --color-info-content: #002b3d;
+  --color-success: #36d399ad;
+  --color-success-content: #003320;
+  --color-warning: #fbbd23;
+  --color-warning-content: #382800;
+  --color-error: #f87272;
+  --color-error-content: #470000;
+}

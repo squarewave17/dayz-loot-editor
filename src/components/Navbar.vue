@@ -21,6 +21,12 @@
               Live Data
             </button></router-link
           >
+          <button
+            className="btn btn-ghost btn-sm rounded-btn"
+            @click="globalStore.prepareSave()"
+          >
+            compile
+          </button>
         </div>
       </div>
     </div>
@@ -29,4 +35,6 @@
 
 <script setup>
   import Logo from "../components/Logo.vue";
+  import { useGlobalStore } from "../store/globalStore";
+  const globalStore = useGlobalStore();
 </script>

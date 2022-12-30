@@ -12,14 +12,19 @@ export const useGlobalStore = defineStore("globalStore", {
       browser: "",
       protocol: "",
       realData: "",
+      stockData: [],
       liveData: [],
     };
   },
   actions: {
-    initStore(data) {
+    async initStore(data) {
       const { isBrowser, isSsl } = useSystemDetect();
       this.browser = isBrowser();
       this.protocol = isSsl();
+      const test = await fetch("dayzStock/types.xml").then((response) =>
+        response.text()
+      );
+      this.stockData = await this.processInputData(test);
     },
     async loadFile(file) {
       this.isLoading = true;
@@ -44,6 +49,22 @@ export const useGlobalStore = defineStore("globalStore", {
       this.isLoading = false;
       this.hasData = true;
     },
+    async prepareSave() {
+      const { toRealData, toXML } = useDataConversion();
+      const types = this.liveData.map((entry) => {
+        return toRealData(entry);
+      });
+      this.realData.types.type = types;
+      return toXML(this.realData);
+    },
+    async processInputData(data) {
+      const { toJSON, toLiveData } = useDataConversion();
+      const convertedData = toJSON(data);
+      const liveData = convertedData.types.type.map((entry, index) => {
+        return toLiveData(entry, index);
+      });
+      return liveData;
+    },
   },
   /**
    * Getters aren't functions, so params arent passed as you'd expect
@@ -64,7 +85,7 @@ export const useGlobalStore = defineStore("globalStore", {
       }
     },
     outputData: (state) => {
-      const { toXML } = useDataConversion();
+      const { toRealData, toXML } = useDataConversion();
       return toXML(state.realData);
     },
     checkIfData: (state) => {
@@ -74,8 +95,50 @@ export const useGlobalStore = defineStore("globalStore", {
         return true;
       }
     },
-    dataLength: (state) => {
-      return state.realData.types.type.length;
+    stockStats: (state) => {
+      let totalNominal = 0;
+      let totalMin = 0;
+      let totalQmin = 0;
+      let totalQmax = 0;
+      state.stockData.forEach((entry) => {
+        totalNominal += +entry.nominal;
+        totalMin += +entry.min;
+        if (entry.quantmax !== "-1") {
+          totalQmin += +entry.quantmax;
+          totalQmax += +entry.quantmin;
+        }
+      });
+
+      const total = {
+        nominal: totalNominal,
+        min: totalMin,
+        qmin: totalQmin,
+        qmax: totalQmax,
+      };
+
+      return total;
+    },
+    liveStats: (state) => {
+      let totalNominal = 0;
+      let totalMin = 0;
+      let totalQmin = 0;
+      let totalQmax = 0;
+      state.liveData.forEach((entry) => {
+        totalNominal += +entry.nominal;
+        totalMin += +entry.min;
+        if (entry.quantmax !== "-1") {
+          totalQmin += +entry.quantmax;
+          totalQmax += +entry.quantmin;
+        }
+      });
+
+      const total = {
+        nominal: totalNominal,
+        min: totalMin,
+        qmin: totalQmin,
+        qmax: totalQmax,
+      };
+      return total;
     },
   },
 });

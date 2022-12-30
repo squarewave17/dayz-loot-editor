@@ -15,7 +15,7 @@ module.exports = {
         main: "200px 1fr 200px;",
       },
       gridTemplateRows: {
-        main: "50px 1fr",
+        main: "50px 1fr calc(100vh - 814px)",
       },
     },
   },

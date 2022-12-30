@@ -1,5 +1,11 @@
 import { js2xml, xml2js } from "xml-js";
+import { useGlobalStore } from "../store/globalStore";
+
 export default function dataConversion() {
+  /**
+   * store
+   */
+  const globalStore = useGlobalStore();
   const toJSON = (data) => {
     const xml = data;
     const options = {
@@ -100,9 +106,124 @@ export default function dataConversion() {
     return liveEntry;
   };
 
+  const toRealData = (data) => {
+    const {
+      name,
+      nominal,
+      lifetime,
+      restock,
+      min,
+      quantmin,
+      quantmax,
+      cost,
+      countInCargo,
+      countInHoarder,
+      countInMap,
+      countInPlayer,
+      crafted,
+      deloot,
+      category,
+      tag,
+      usage,
+      value,
+    } = data;
+
+    // Rebuild flags
+    const flags = {
+      count_in_cargo: countInCargo === true ? "1" : "0",
+      count_in_hoarder: countInHoarder === true ? "1" : "0",
+      count_in_map: countInMap === true ? "1" : "0",
+      count_in_player: countInPlayer === true ? "1" : "0",
+      crafted: crafted === true ? "1" : "0",
+      deloot: deloot === true ? "1" : "0",
+    };
+
+    // Deconstruct array
+    const deconstructArray = (array) => {
+      if (array.length > 1) {
+        let newArray = [];
+        array.forEach((entry) => {
+          newArray.push({
+            _attributes: {
+              name: entry,
+            },
+          });
+        });
+        return newArray;
+      } else if (array.length === 1) {
+        return {
+          _attributes: {
+            name: array[0],
+          },
+        };
+      } else {
+        return false;
+      }
+    };
+
+    // Parse category
+    const parsedCategory = deconstructArray(category);
+    // Parse category
+    const parsedTag = deconstructArray(tag);
+    //parse usage
+    const parsedUsage = deconstructArray(usage);
+    //parse value
+    const parsedValue = deconstructArray(value);
+
+    const realEntry = {
+      _attributes: {
+        name: name,
+      },
+      nominal: {
+        _text: nominal,
+      },
+      lifetime: {
+        _text: lifetime,
+      },
+      restock: {
+        _text: restock,
+      },
+      min: {
+        _text: min,
+      },
+      quantmin: {
+        _text: quantmin,
+      },
+      quantmax: {
+        _text: quantmax,
+      },
+      cost: {
+        _text: cost,
+      },
+      flags: {
+        _attributes: flags,
+      },
+      category: parsedCategory,
+      tag: parsedTag,
+      usage: parsedUsage,
+      value: parsedValue,
+    };
+
+    // delete unneeded properties
+    if (!parsedCategory) {
+      delete realEntry.category;
+    }
+    if (!parsedTag) {
+      delete realEntry.tag;
+    }
+    if (!parsedUsage) {
+      delete realEntry.usage;
+    }
+    if (!parsedValue) {
+      delete realEntry.value;
+    }
+    return realEntry;
+  };
+
   return {
     toJSON,
     toXML,
     toLiveData,
+    toRealData,
   };
 }
