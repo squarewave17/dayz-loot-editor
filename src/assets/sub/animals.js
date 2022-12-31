@@ -1,4 +1,4 @@
-const animals = [
+export const animals = [
   "Animal_BosTaurusF_Brown",
   "Animal_BosTaurusF_Spotted",
   "Animal_BosTaurusF_White",

@@ -1,5 +1,6 @@
 import { js2xml, xml2js } from "xml-js";
 import { useGlobalStore } from "../store/globalStore";
+import * as sub from "../assets/sub/subcategories.js";
 
 export default function dataConversion() {
   /**
@@ -82,6 +83,28 @@ export default function dataConversion() {
     const value = constructArray(dataValue);
     const category = constructArray(dataCategory);
 
+    //construct subcategory
+    const subCategories = {
+      ammo: sub.ammo,
+      zombies: sub.zombies,
+      animals: sub.animals,
+      guns: sub.guns,
+      vehicles: sub.vehicles,
+      "gun accesories": sub.gunAccesories,
+      medical: sub.medical,
+    };
+    const subSearch = (name) => {
+      //search each property in subCategories to see if the array contains the name. return the object key if true
+      for (const [key, value] of Object.entries(subCategories)) {
+        if (value.includes(name)) {
+          return key;
+        }
+      }
+      return category[0];
+    };
+
+    const subCategory = subSearch(_attributes.name);
+
     const liveEntry = {
       id: index,
       name: _attributes.name,
@@ -99,6 +122,7 @@ export default function dataConversion() {
       crafted,
       deloot,
       category,
+      subCategory,
       tag,
       usage,
       value,

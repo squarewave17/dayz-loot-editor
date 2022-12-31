@@ -1,4 +1,4 @@
-const vehicles = [
+export const vehicles = [
   "CivilianSedan",
   "CivilianSedan_Black",
   "CivilianSedan_Wine",

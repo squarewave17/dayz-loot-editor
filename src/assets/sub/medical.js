@@ -1,4 +1,4 @@
-const medical = [
+export const medical = [
   "AntiChemInjector",
   "AntiPestsSpray",
   "BandageDressing",

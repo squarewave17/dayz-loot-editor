@@ -1,4 +1,4 @@
-const ammo = [
+export const ammo = [
   "AmmoBox_00buck_10rnd",
   "AmmoBox_12gaRubberSlug_10Rnd",
   "AmmoBox_12gaSlug_10Rnd",

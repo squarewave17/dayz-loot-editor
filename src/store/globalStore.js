@@ -14,6 +14,7 @@ export const useGlobalStore = defineStore("globalStore", {
       realData: "",
       stockData: [],
       liveData: [],
+      currentSelection: 0,
     };
   },
   actions: {
@@ -60,9 +61,11 @@ export const useGlobalStore = defineStore("globalStore", {
     async processInputData(data) {
       const { toJSON, toLiveData } = useDataConversion();
       const convertedData = toJSON(data);
+
       const liveData = convertedData.types.type.map((entry, index) => {
         return toLiveData(entry, index);
       });
+
       return liveData;
     },
   },

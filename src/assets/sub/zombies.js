@@ -1,4 +1,4 @@
-const zombies = [
+export const zombies = [
   "ZmbF_BlueCollarFat_Blue",
   "ZmbF_BlueCollarFat_Green",
   "ZmbF_BlueCollarFat_Red",

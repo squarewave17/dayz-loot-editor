@@ -20,7 +20,10 @@
   <div className="flex flex-col h-screen">
     <Navbar />
     <main className="grid grid-cols-main grid-rows-main grow">
-      <div id="main-top" className="container mx-auto col-span-3">top</div>
+      <div
+        id="main-top"
+        className="container flex items-center mx-auto col-span-3"
+      ></div>
       <div
         id="main-left"
         className="card bg-base-300 mx-3 p-3 shadow-xl row-span-2"

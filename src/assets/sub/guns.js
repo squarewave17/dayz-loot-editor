@@ -1,4 +1,4 @@
-const guns = [
+export const guns = [
   "AK101",
   "AK101_Black",
   "AK101_Green",

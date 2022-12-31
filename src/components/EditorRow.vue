@@ -1,34 +1,39 @@
 <template>
-  <div className="table-row">
-    <div className="table-name table-cell">{{ name }}</div>
-    <div className="table-nominal table-cell" v-if="display.nominal">
+  <div class="editor-row" :class="{ isSelected: selected }" @click="select">
+    <div className="table-name editor-cell">{{ name }}</div>
+    <div className="table-nominal editor-cell" v-if="display.nominal">
       <InputNumber :value="nominal" @change="updateNominal" />
     </div>
-    <div className="table-lifetime table-cell" v-if="display.lifetime">
+    <div className="table-lifetime editor-cell" v-if="display.lifetime">
       <InputNumber :value="lifetime" @change="updateLifetime" />
     </div>
-    <div className="table-restock table-cell" v-if="display.restock">
+    <div className="table-restock editor-cell" v-if="display.restock">
       <InputNumber :value="restock" @change="updateRestock" />
     </div>
-    <div className="table-min table-cell" v-if="display.min">
+    <div className="table-min editor-cell" v-if="display.min">
       <InputNumber :value="min" @change="updateMin" />
     </div>
-    <div className="table-quant table-cell" v-if="display.quantity">
+    <div className="table-quant editor-cell no-border" v-if="display.quantity">
       <InputNumber
         :value="qmin"
         @change="updateQmin"
         :disabled="qmin === '-1'"
       />
     </div>
-    <div className="table-quant table-cell" v-if="display.quantity">
+    <div className="table-quant editor-cell" v-if="display.quantity">
       <InputNumber
         :value="qmax"
         @change="updateQmin"
         :disabled="qmax === '-1'"
       />
     </div>
-    <div className="table-cost table-cell" v-if="display.cost">{{ cost }}</div>
-    <div className="table-tag table-cell" v-if="display.flags">
+    <div className="table-cost editor-cell " v-if="display.cost">
+      {{ cost }}
+    </div>
+    <div
+      className="table-tag editor-cell no-border justify-center"
+      v-if="display.flags"
+    >
       <input
         type="checkbox"
         :checked="countInCargo"
@@ -36,7 +41,10 @@
         @change="updateCargo"
       />
     </div>
-    <div className="table-tag table-cell" v-if="display.flags">
+    <div
+      className="table-tag editor-cell no-border justify-center"
+      v-if="display.flags"
+    >
       <input
         type="checkbox"
         :checked="countInHoarder"
@@ -44,7 +52,10 @@
         @change="updateHoarder"
       />
     </div>
-    <div className="table-tag table-cell" v-if="display.flags">
+    <div
+      className="table-tag editor-cell no-border justify-center"
+      v-if="display.flags"
+    >
       <input
         type="checkbox"
         :checked="countInMap"
@@ -52,7 +63,10 @@
         @change="updateMap"
       />
     </div>
-    <div className="table-tag table-cell" v-if="display.flags">
+    <div
+      className="table-tag editor-cell no-border justify-center"
+      v-if="display.flags"
+    >
       <input
         type="checkbox"
         :checked="countInPlayer"
@@ -60,7 +74,10 @@
         @change="updatePlayer"
       />
     </div>
-    <div className="table-tag table-cell" v-if="display.flags">
+    <div
+      className="table-tag editor-cell no-border justify-center"
+      v-if="display.flags"
+    >
       <input
         type="checkbox"
         :checked="crafted"
@@ -68,7 +85,7 @@
         @change="updateCrafted"
       />
     </div>
-    <div className="table-tag table-cell" v-if="display.flags">
+    <div className="table-tag editor-cell justify-center" v-if="display.flags">
       <input
         type="checkbox"
         :checked="deloot"
@@ -76,11 +93,12 @@
         @change="updateDeloot"
       />
     </div>
-    <div className="table-category table-cell" v-if="display.category">
-      {{ capitalize(category[0]) }}
+    <div className="table-category editor-cell" v-if="display.category">
+      <!-- {{ capitalize(category[0]) }} -->
+      {{ subCategory }}
     </div>
     <div
-      className="table-usage table-name-coast table-cell"
+      className="table-usage table-name-coast editor-cell no-border justify-center"
       v-if="display.usage"
     >
       <input
@@ -91,7 +109,7 @@
       />
     </div>
     <div
-      className="table-usage table-name-farm table-cell"
+      className="table-usage table-name-farm editor-cell no-border justify-center"
       v-if="display.usage"
     >
       <input
@@ -102,7 +120,7 @@
       />
     </div>
     <div
-      className="table-usage table-name-firefighter table-cell"
+      className="table-usage table-name-firefighter editor-cell no-border justify-center"
       v-if="display.usage"
     >
       <input
@@ -113,7 +131,7 @@
       />
     </div>
     <div
-      className="table-usage table-name-hunting table-cell"
+      className="table-usage table-name-hunting editor-cell no-border justify-center"
       v-if="display.usage"
     >
       <input
@@ -124,7 +142,7 @@
       />
     </div>
     <div
-      className="table-usage table-name-industrial table-cell"
+      className="table-usage table-name-industrial editor-cell no-border justify-center"
       v-if="display.usage"
     >
       <input
@@ -135,7 +153,7 @@
       />
     </div>
     <div
-      className="table-usage table-name-medic table-cell"
+      className="table-usage table-name-medic editor-cell no-border justify-center"
       v-if="display.usage"
     >
       <input
@@ -146,7 +164,7 @@
       />
     </div>
     <div
-      className="table-usage table-name-military table-cell"
+      className="table-usage table-name-military editor-cell no-border justify-center"
       v-if="display.usage"
     >
       <input
@@ -157,7 +175,7 @@
       />
     </div>
     <div
-      className="table-usage table-name-office table-cell"
+      className="table-usage table-name-office editor-cell no-border justify-center"
       v-if="display.usage"
     >
       <input
@@ -168,7 +186,7 @@
       />
     </div>
     <div
-      className="table-usage table-name-police table-cell"
+      className="table-usage table-name-police editor-cell no-border justify-center"
       v-if="display.usage"
     >
       <input
@@ -179,7 +197,7 @@
       />
     </div>
     <div
-      className="table-usage table-name-prison table-cell"
+      className="table-usage table-name-prison editor-cell no-border justify-center"
       v-if="display.usage"
     >
       <input
@@ -190,7 +208,7 @@
       />
     </div>
     <div
-      className="table-usage table-name-school table-cell"
+      className="table-usage table-name-school editor-cell no-border justify-center"
       v-if="display.usage"
     >
       <input
@@ -201,7 +219,7 @@
       />
     </div>
     <div
-      className="table-usage table-name-town table-cell"
+      className="table-usage table-name-town editor-cell no-border justify-center"
       v-if="display.usage"
     >
       <input
@@ -212,7 +230,7 @@
       />
     </div>
     <div
-      className="table-usage table-name-village table-cell"
+      className="table-usage table-name-village editor-cell no-border justify-center"
       v-if="display.usage"
     >
       <input
@@ -223,7 +241,7 @@
       />
     </div>
     <div
-      className="table-usage table-name-contaminated table-cell"
+      className="table-usage table-name-contaminated editor-cell no-border justify-center"
       v-if="display.usage"
     >
       <input
@@ -234,7 +252,7 @@
       />
     </div>
     <div
-      className="table-usage table-name-contaminated table-cell"
+      className="table-usage table-name-contaminated editor-cell justify-center"
       v-if="display.usage"
     >
       <input
@@ -244,7 +262,10 @@
         @change="updateUsage"
       />
     </div>
-    <div className="table-value table-cell" v-if="display.value">
+    <div
+      className="table-value editor-cell no-border justify-center"
+      v-if="display.value"
+    >
       <input
         type="checkbox"
         v-model="tier.tier1"
@@ -252,7 +273,10 @@
         @change="updateTier"
       />
     </div>
-    <div className="table-value table-cell" v-if="display.value">
+    <div
+      className="table-value editor-cell no-border justify-center"
+      v-if="display.value"
+    >
       <input
         type="checkbox"
         v-model="tier.tier2"
@@ -260,7 +284,10 @@
         @change="updateTier"
       />
     </div>
-    <div className="table-value table-cell" v-if="display.value">
+    <div
+      className="table-value editor-cell no-border justify-center"
+      v-if="display.value"
+    >
       <input
         type="checkbox"
         v-model="tier.tier3"
@@ -268,7 +295,10 @@
         @change="updateTier"
       />
     </div>
-    <div className="table-value table-cell" v-if="display.value">
+    <div
+      className="table-value editor-cell justify-center"
+      v-if="display.value"
+    >
       <input
         type="checkbox"
         v-model="tier.unique"
@@ -349,6 +379,10 @@
     category: {
       type: Array,
       default: [],
+    },
+    subCategory: {
+      type: String,
+      default: "-",
     },
     tag: {
       type: Array,
@@ -486,4 +520,29 @@
    * Composables
    */
   const { capitalize } = useStringHelpers();
+
+  /**
+   * Handle Selection
+   */
+
+  const selected = computed(() => {
+    if (globalStore.currentSelection === id.value) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+
+  const select = () => {
+    globalStore.currentSelection = id.value;
+  };
 </script>
+
+<style scoped>
+  .editor-row > div {
+    cursor: pointer;
+  }
+  .editor-row.isSelected > div {
+    background-color: var(--color-dark-50);
+  }
+</style>

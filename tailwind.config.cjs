@@ -5,8 +5,8 @@ module.exports = {
     fontSize: {
       sm: "0.707rem",
       base: "1rem",
-      xl: "1.414rem",
-      "2xl": "1.999rem",
+      l: "1.414rem",
+      xl: "1.999rem",
       "3xl": "2.827rem",
       "4xl": "3.998rem",
     },
@@ -15,7 +15,7 @@ module.exports = {
         main: "200px 1fr 200px;",
       },
       gridTemplateRows: {
-        main: "50px 1fr calc(100vh - 814px)",
+        main: "50px 1fr calc(100vh - 744px)",
       },
     },
   },

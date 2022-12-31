@@ -1,4 +1,4 @@
-const accesories = [
+export const gunAccesories = [
   "ACOGOptic",
   "ACOGOptic_6x",
   "AK74_Hndgrd",
@@ -57,4 +57,5 @@ const accesories = [
   "StarlightOptic",
   "TLRLight",
   "UniversalLight",
+  "KobraOptic",
 ];

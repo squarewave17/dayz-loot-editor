@@ -1,11 +1,8 @@
-const barrelHoles = [
+const unknown = [
   "BarrelHoles_Blue",
   "BarrelHoles_Green",
   "BarrelHoles_Red",
   "BarrelHoles_Yellow",
-];
-
-const unknown = [
   "BoneBait",
   "BoneHook",
   "Bonfire",
