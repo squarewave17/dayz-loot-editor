@@ -211,8 +211,9 @@ const itemInfo = [
   },
   {
     AirborneMask: {
-      niceName: "",
-      description: "",
+      niceName: "NBC Respirator",
+      description:
+        "	A full face gas mask with one filter. Used to protect from airborne pollutants and toxic gases. Fits the 'Nuclear, Biological, Chemical' suit.",
     },
   },
   {
@@ -5893,14 +5894,16 @@ const itemInfo = [
   },
   {
     OMNOGloves_Brown: {
-      niceName: "",
-      description: "",
+      niceName: "Combat Gloves (Brown)",
+      description:
+        "Designed for military use, but quickly found their way to the civilian market. They offer decent protection from the elements.",
     },
   },
   {
     OMNOGloves_Gray: {
-      niceName: "",
-      description: "",
+      niceName: "Combat Gloves (Gray)",
+      description:
+        "Designed for military use, but quickly found their way to the civilian market. They offer decent protection from the elements.",
     },
   },
   {

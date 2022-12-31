@@ -415,6 +415,13 @@
    */
   const updateNominal = (e) => {
     globalStore.liveData[id.value].nominal = e.target.value;
+    if (
+      globalStore.liveData[id.value].min >
+      globalStore.liveData[id.value].nominal
+    ) {
+      globalStore.liveData[id.value].min =
+        globalStore.liveData[id.value].nominal;
+    }
   };
   const updateLifetime = (e) => {
     globalStore.liveData[id.value].lifetime = e.target.value;

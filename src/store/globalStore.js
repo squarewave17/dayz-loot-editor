@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import useFileSystem from "../composables/useFileSystem";
 import useSystemDetect from "../composables/useSystemDetect";
 import useDataConversion from "../composables/useDataConversion";
+import { useStorage } from "@vueuse/core";
 
 export const useGlobalStore = defineStore("globalStore", {
   state: () => {
@@ -19,9 +20,11 @@ export const useGlobalStore = defineStore("globalStore", {
   },
   actions: {
     async initStore(data) {
+      // const localState = useStorage("dayz-loot-session", {});
       const { isBrowser, isSsl } = useSystemDetect();
       this.browser = isBrowser();
       this.protocol = isSsl();
+      // console.log(localState.value);
       const test = await fetch("dayzStock/types.xml").then((response) =>
         response.text()
       );
@@ -46,7 +49,6 @@ export const useGlobalStore = defineStore("globalStore", {
       this.liveData = this.realData.types.type.map((entry, index) => {
         return toLiveData(entry, index);
       });
-
       this.isLoading = false;
       this.hasData = true;
     },

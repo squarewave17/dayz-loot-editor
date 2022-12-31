@@ -1,5 +1,5 @@
 <template>
-  <input type="number" className="input w-full max-w-xs" />
+  <input type="number" min="0" className="input w-full max-w-xs" />
 </template>
 
 <style scoped>
