@@ -1,50 +1,199 @@
 const itemInfo = [
   {
     ACOGOptic: {
-      niceName: "",
-      description: "",
+      niceName: "ATOG 4x32 Scope",
+      description:
+        "A standardized rail-mounted, 4x magnifying scope with tritium-illuminated reticle designed for M4-A1 assault rifle",
+      usedBy: ["SG5-K", "USG-45", "M4-A1", "Pioneer", "SVAL", "LAR"],
     },
   },
   {
     ACOGOptic_6x: {
-      niceName: "",
-      description: "",
+      niceName: "ATOG 6x48 Scope",
+      description:
+        "A standardized rail-mounted, 6x magnifying scope. Designed for western designated marksman rifles. A Baraka sight is mounted to the top railing",
+      usedBy: ["SG5-K", "USG-45", "M4-A1", "Pioneer", "SVAL", "LAR", "AUR AX"],
+      magazines: ["	30rd KA-101 Mag"],
     },
   },
   {
     AK101: {
-      niceName: "",
-      description: "",
+      niceName: "KA-101",
+      description:
+        "Selective-fire assault rifle fed from a detachable magazine. Export version of modernized KA-74M with compatible attachments. Uses 5.56x45mm rounds",
+      ammo: ["5.56x45mm Rounds", "5.56x45mm Tracer Rounds"],
+      attatchments: {
+        magazine: ["30rd KA-101 Mag"],
+        optics: ["East Optics"],
+        handguards: [
+          "KA Wooden Handguard",
+          "KA Polymer Handguard",
+          "KA Rail Handguard",
+        ],
+        buttstocks: [
+          "KA Wooden Buttstock",
+          "KA Lightweight Buttstock",
+          "KA Polymer Buttstock",
+          "KAS-74U Lightweight Buttstock",
+        ],
+        muzzles: ["Normalized Suppressor", "Plastic Bottle Suppressor"],
+        illumination: ["Universal Flashlight"],
+        bayonets: ["KA Bayonet"],
+        wraps: ["Ghillie Rifle Wrap"],
+      },
     },
   },
   {
     AK101_Black: {
-      niceName: "",
-      description: "",
+      niceName: "KA-101 (black)",
+      description:
+        "Selective-fire assault rifle fed from a detachable magazine. Export version of modernized KA-74M with compatible attachments. Uses 5.56x45mm rounds",
+      ammo: ["5.56x45mm Rounds", "5.56x45mm Tracer Rounds"],
+      attatchments: {
+        magazine: ["30rd KA-101 Mag"],
+        optic: ["East Optics"],
+        handguard: [
+          "KA Wooden Handguard",
+          "KA Polymer Handguard",
+          "KA Rail Handguard",
+        ],
+        buttstock: [
+          "KA Wooden Buttstock",
+          "KA Lightweight Buttstock",
+          "KA Polymer Buttstock",
+          "KAS-74U Lightweight Buttstock",
+        ],
+        muzzle: ["Normalized Suppressor", "Plastic Bottle Suppressor"],
+        illumination: ["Universal Flashlight"],
+        bayonet: ["KA Bayonet"],
+        wrap: ["Ghillie Rifle Wrap"],
+      },
     },
   },
   {
     AK101_Green: {
-      niceName: "",
-      description: "",
+      niceName: "KA-101 (green",
+      description:
+        "Selective-fire assault rifle fed from a detachable magazine. Export version of modernized KA-74M with compatible attachments. Uses 5.56x45mm rounds",
+      ammo: ["5.56x45mm Rounds", "5.56x45mm Tracer Rounds"],
+      attatchments: {
+        magazine: ["30rd KA-101 Mag"],
+        optics: ["East Optics"],
+        handguards: [
+          "KA Wooden Handguard",
+          "KA Polymer Handguard",
+          "KA Rail Handguard",
+        ],
+        buttstocks: [
+          "KA Wooden Buttstock",
+          "KA Lightweight Buttstock",
+          "KA Polymer Buttstock",
+          "KAS-74U Lightweight Buttstock",
+        ],
+        muzzles: ["Normalized Suppressor", "Plastic Bottle Suppressor"],
+        illumination: ["Universal Flashlight"],
+        bayonets: ["KA Bayonet"],
+        wraps: ["Ghillie Rifle Wrap"],
+      },
     },
   },
   {
     AK74: {
-      niceName: "",
-      description: "",
+      niceName: "KA-74",
+      description:
+        "Selective-fire assault rifle fed from a detachable magazine. Replacement of KA-M with compatible attachments. Uses 5.45x39mm rounds.",
+      ammo: ["5.56x45mm Rounds", "5.56x45mm Tracer Rounds"],
+      attatchments: {
+        magazine: ["30rd KA-74 Mag", "45rd KA-74 Mag"],
+        optics: [
+          "Kobra Sights",
+          "p1-87-L Scope",
+          "PSO-1 Scope",
+          "PSO-1-1 Scope",
+          "1PN51 Scope",
+        ],
+        handguards: [
+          "KA Wooden Handguard",
+          "KA Polymer Handguard",
+          "KA Rail Handguard",
+        ],
+        buttstocks: [
+          "KA Wooden Buttstock",
+          "KA Lightweight Buttstock",
+          "KA Polymer Buttstock",
+          "KAS-74U Lightweight Buttstock",
+        ],
+        muzzles: ["Normalized Suppressor", "Plastic Bottle Suppressor"],
+        illumination: ["Universal Flashlight"],
+        bayonets: ["KA Bayonet"],
+        wraps: ["Ghillie Rifle Wrap"],
+      },
     },
   },
   {
     AK74_Black: {
-      niceName: "",
-      description: "",
+      niceName: "KA-74 (black)",
+      description:
+        "Selective-fire assault rifle fed from a detachable magazine. Replacement of KA-M with compatible attachments. Uses 5.45x39mm rounds.",
+      ammo: ["5.56x45mm Rounds", "5.56x45mm Tracer Rounds"],
+      attatchments: {
+        magazine: ["30rd KA-74 Mag", "45rd KA-74 Mag"],
+        optics: [
+          "Kobra Sights",
+          "p1-87-L Scope",
+          "PSO-1 Scope",
+          "PSO-1-1 Scope",
+          "1PN51 Scope",
+        ],
+        handguards: [
+          "KA Wooden Handguard",
+          "KA Polymer Handguard",
+          "KA Rail Handguard",
+        ],
+        buttstocks: [
+          "KA Wooden Buttstock",
+          "KA Lightweight Buttstock",
+          "KA Polymer Buttstock",
+          "KAS-74U Lightweight Buttstock",
+        ],
+        muzzles: ["Normalized Suppressor", "Plastic Bottle Suppressor"],
+        illumination: ["Universal Flashlight"],
+        bayonets: ["KA Bayonet"],
+        wraps: ["Ghillie Rifle Wrap"],
+      },
     },
   },
   {
     AK74_Green: {
-      niceName: "",
-      description: "",
+      niceName: "KA-74 (black",
+      description:
+        "Selective-fire assault rifle fed from a detachable magazine. Replacement of KA-M with compatible attachments. Uses 5.45x39mm rounds.",
+      ammo: ["5.56x45mm Rounds", "5.56x45mm Tracer Rounds"],
+      attatchments: {
+        magazine: ["30rd KA-74 Mag", "45rd KA-74 Mag"],
+        optics: [
+          "Kobra Sights",
+          "p1-87-L Scope",
+          "PSO-1 Scope",
+          "PSO-1-1 Scope",
+          "1PN51 Scope",
+        ],
+        handguards: [
+          "KA Wooden Handguard",
+          "KA Polymer Handguard",
+          "KA Rail Handguard",
+        ],
+        buttstocks: [
+          "KA Wooden Buttstock",
+          "KA Lightweight Buttstock",
+          "KA Polymer Buttstock",
+          "KAS-74U Lightweight Buttstock",
+        ],
+        muzzles: ["Normalized Suppressor", "Plastic Bottle Suppressor"],
+        illumination: ["Universal Flashlight"],
+        bayonets: ["KA Bayonet"],
+        wraps: ["Ghillie Rifle Wrap"],
+      },
     },
   },
   {

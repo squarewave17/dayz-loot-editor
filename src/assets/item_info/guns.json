@@ -1,0 +1,754 @@
+{
+  "FX-45": {
+    "niceName": "FX-45",
+    "image": "FX-45.webp",
+    "description": "Semi-automatic pistol, fed from a detachable magazine. Made in tactical variant. Uses .45 ACP rounds. ",
+    "ammo": [".45 ACP Rounds"],
+    "attatchments": {
+      "magazine": ["15rd FX-45 Mag"],
+      "optics": ["Mini Sights"],
+      "buttstock": [],
+      "muzzle": ["Pistol Suppressor", "Plastic Bottle Suppressor"],
+      "handguard": [],
+      "illumination": ["Pistol Flashlight"]
+    }
+  },
+  "AUR_A1": {
+    "niceName": "AUR A1",
+    "image": "AUR_A1.webp",
+    "description": "A selective fire bullpup weapon. The compact design and the short barrel make the weapon suitable for CQB. It's fed by a dedicated magazine. Uses 5.56x45mm rounds. ",
+    "ammo": ["5.56x45mm Rounds", "5.56x45mm Tracer Rounds"],
+    "attatchments": {
+      "magazine": ["30rd AUR Mag"],
+      "optics": [],
+      "buttstock": [],
+      "muzzle": ["Plastic Bottle Suppressor"],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "Revolver": {
+    "niceName": "Revolver",
+    "image": "Revolver.webp",
+    "description": "Six shot double-action revolver. Compared to pistols, it is relatively slow to load and requires frequent maintenance. On the plus side, it can deliver exceptional damage at short to medium ranges. Uses .357 rounds. ",
+    "ammo": [".357 Rounds"],
+    "attatchments": {
+      "magazine": [],
+      "optics": [],
+      "buttstock": [],
+      "muzzle": [],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "BK-133": {
+    "niceName": "BK-133",
+    "image": "BK-133.webp",
+    "description": "Six shot pump action shotgun fed from internal magazine. Good for hunting dangerous game. Uses both 12ga bucks and slugs. ",
+    "ammo": ["12ga 00 Buckshots", "12ga Rifled Slugs", "12ga Rubber Slugs"],
+    "attatchments": {
+      "magazine": [],
+      "optics": ["Mini Sights"],
+      "buttstock": [],
+      "muzzle": [],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "Signal_Pistol": {
+    "niceName": "Signal Pistol",
+    "image": "Signal_Pistol.webp",
+    "description": "Simple breech loaded signal pistol. Launching flares at long distances, it can be a handy tool for communication, orientation, or just illumination. Uses flare cartridges. ",
+    "ammo": ["Flare"],
+    "attatchments": {
+      "magazine": [],
+      "optics": [],
+      "buttstock": [],
+      "muzzle": [],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "KA-101": {
+    "niceName": "KA-101",
+    "image": "KA-101.webp",
+    "description": "Selective-fire assault rifle fed from a detachable magazine. Export version of modernized KA-74M with compatible attachments. Uses 5.56x45mm rounds. ",
+    "ammo": ["5.56x45mm Rounds", "5.56x45mm Tracer Rounds"],
+    "attatchments": {
+      "magazine": ["30rd KA-101 Mag"],
+      "optics": ["East Optics"],
+      "buttstock": [
+        "KA Wooden Buttstock",
+        "KA Lightweight Buttstock",
+        "KA Polymer Buttstock",
+        "KAS-74U Lightweight Buttstock"
+      ],
+      "muzzle": ["Normalized Suppressor", "Plastic Bottle Suppressor"],
+      "handguard": [
+        "KA Wooden Handguard",
+        "KA Polymer Handguard",
+        "KA Rail Handguard"
+      ],
+      "illumination": ["Universal Flashlight"]
+    }
+  },
+  "Bizon": {
+    "niceName": "Bizon",
+    "image": "Bizon.webp",
+    "description": "Selective-fire submachine gun, fed from an unusual cylindrical magazine. Pistol caliber bullets allow low recoil and long sustained fire. Uses .380 ACP rounds. ",
+    "ammo": [".380 ACP Rounds"],
+    "attatchments": {
+      "magazine": ["64rd Bizon Mag"],
+      "optics": ["East Optics"],
+      "buttstock": ["Bizon Lightweight Buttstock"],
+      "muzzle": ["Pistol Suppressor", "Plastic Bottle Suppressor"],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "Derringer": {
+    "niceName": "Derringer",
+    "image": "Derringer.webp",
+    "description": "Double-barreled break-action pistol. Combines compact dimensions and powerful ammunition. Uses .357 rounds. ",
+    "ammo": [".357 Rounds"],
+    "attatchments": {
+      "magazine": [],
+      "optics": [],
+      "buttstock": [],
+      "muzzle": [],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "USG-45": {
+    "niceName": "USG-45",
+    "image": "USG-45.webp",
+    "description": "Selective-fire submachine gun fed from a detachable magazine. High caliber makes up for slower fire rate. Uses .45 ACP rounds. ",
+    "ammo": [".45 ACP Rounds"],
+    "attatchments": {
+      "magazine": ["25rd USG-45 Mag"],
+      "optics": [
+        "Baraka Sights",
+        "Combat Sights",
+        "RVN Sights",
+        "ATOG 4x32 Scope",
+        "ATOG 6x48 Scope",
+        "NV-PVS4 Scope"
+      ],
+      "buttstock": [],
+      "muzzle": ["Pistol Suppressor", "Plastic Bottle Suppressor"],
+      "handguard": [],
+      "illumination": ["Universal Flashlight"]
+    }
+  },
+  "BK-43": {
+    "niceName": "BK-43",
+    "image": "BK-43.webp",
+    "description": "Double-barreled break-action shotgun. Old and reliable design, capable of firing both barrels simultaneously. Uses both 12ga bucks and slugs. ",
+    "ammo": ["12ga 00 Buckshots", "12ga Rifled Slugs", "12ga Rubber Slugs"],
+    "attatchments": {
+      "magazine": [],
+      "optics": [],
+      "buttstock": [],
+      "muzzle": [],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "Deagle": {
+    "niceName": "Deagle",
+    "image": "Deagle.webp",
+    "description": "Large, semi-automatic pistol, fed from a detachable magazine. Equipped with railed barrel, it hits way above its weight. Uses .357 rounds. ",
+    "ammo": [".357 Rounds"],
+    "attatchments": {
+      "magazine": ["9rd Deagle Mag"],
+      "optics": ["Mini Sights", "Handgun Scope"],
+      "buttstock": [],
+      "muzzle": ["Pistol Suppressor", "Plastic Bottle Suppressor"],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "MK_II": {
+    "niceName": "MK II",
+    "image": "MK_II.webp",
+    "description": "Semi-automatic, integrally-suppressed pistol, fed from a detachable magazine. Stealthy and lethal at short range. Uses .22 LR rounds. ",
+    "ammo": [".22 LR Rounds"],
+    "attatchments": {
+      "magazine": ["10rd MK II Mag"],
+      "optics": [],
+      "buttstock": [],
+      "muzzle": [],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "CR-75": {
+    "niceName": "CR-75",
+    "image": "CR-75.webp",
+    "description": "",
+    "ammo": ["9x19mm Rounds"],
+    "attatchments": {
+      "magazine": ["15rd CR-75 Mag"],
+      "optics": ["Mini Sights"],
+      "buttstock": [],
+      "muzzle": ["Pistol Suppressor", "Plastic Bottle Suppressor"],
+      "handguard": [],
+      "illumination": ["Pistol Flashlight"]
+    }
+  },
+  "LE-MAS": {
+    "niceName": "LE-MAS",
+    "image": "LE-MAS.webp",
+    "description": "A bullpup assault rifle, designed to be compact and sustain a high rate of fire. The F1 variant supports semi-auto, burst and full auto mode. It's fed by a dedicated detachable magazine. Uses 5.56x45mm rounds. ",
+    "ammo": ["5.56x45mm Rounds", "5.56x45mm Tracer Rounds"],
+    "attatchments": {
+      "magazine": ["25rd LE-MAS Mag"],
+      "optics": [],
+      "buttstock": [],
+      "muzzle": ["Plastic Bottle Suppressor"],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "Sawed-off_Revolver": {
+    "niceName": "Sawed-off Revolver",
+    "image": "Sawed-off_Revolver.webp",
+    "description": "Sawed-off six shot double-action revolver. Compared to pistols, it's relatively slow to load and requires frequent maintenance. On the plus side, it can deliver exceptional damage at short to medium ranges. Uses .357 rounds. ",
+    "ammo": [".357 Rounds"],
+    "attatchments": {
+      "magazine": [],
+      "optics": [],
+      "buttstock": [],
+      "muzzle": [],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "Kolt_1911": {
+    "niceName": "Kolt 1911",
+    "image": "Kolt_1911.webp",
+    "description": "Semi-automatic pistol, fed from a detachable magazine. Almost a century-old design, it can still hold its own in a fight. Uses .45 ACP rounds. ",
+    "ammo": [".45 ACP Rounds"],
+    "attatchments": {
+      "magazine": ["7rd Kolt 1911 Mag"],
+      "optics": [],
+      "buttstock": [],
+      "muzzle": ["Pistol Suppressor", "Plastic Bottle Suppressor"],
+      "handguard": [],
+      "illumination": ["Pistol Flashlight"]
+    }
+  },
+  "CR-550_Savanna": {
+    "niceName": "CR-550 Savanna",
+    "image": "CR-550_Savanna.webp",
+    "description": "A bolt-action rifle, fed from a detachable magazine. Sturdy and built to last. Uses .308 WIN rounds. ",
+    "ammo": [".308 WIN Rounds", ".308 WIN Tracer Rounds"],
+    "attatchments": {
+      "magazine": ["4rd CR-550 Mag", "10rd CR-550 Mag"],
+      "optics": ["Hunting Scope"],
+      "buttstock": [],
+      "muzzle": ["Plastic Bottle Suppressor"],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "Vaiga": {
+    "niceName": "Vaiga",
+    "image": "Vaiga.webp",
+    "description": "Selective-fire shotgun fed from a detachable magazine. Similar in design to the KA assault rifles, it can mount most compatible scopes. Uses both 12ga bucks and slugs. ",
+    "ammo": ["12ga 00 Buckshots", "12ga Rifled Slugs", "12ga Rubber Slugs"],
+    "attatchments": {
+      "magazine": ["5Rnd Vaiga Mag", "8Rnd Vaiga Mag", "20Rnd Vaiga Drum"],
+      "optics": ["East Optics"],
+      "buttstock": ["Vaiga Lightweight Buttstock"],
+      "muzzle": [],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "Longhorn": {
+    "niceName": "Longhorn",
+    "image": "Longhorn.webp",
+    "description": "Single shot break action hunting pistol. The powerful ammunition makes it most suited for big game. Uses .308 WIN rounds. ",
+    "ammo": [".308 WIN Rounds", ".308 WIN Tracer Rounds"],
+    "attatchments": {
+      "magazine": [],
+      "optics": ["Pistol Scope", "Mini Sights"],
+      "buttstock": [],
+      "muzzle": ["Plastic Bottle Suppressor"],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "Engraved_Kolt_1911": {
+    "niceName": "Engraved Kolt 1911",
+    "image": "Engraved_Kolt_1911.webp",
+    "description": "Semi-automatic pistol, fed from a detachable magazine. This variant had been engraved by an unknown artist. Uses .45 ACP rounds. ",
+    "ammo": [".45 ACP Rounds"],
+    "attatchments": {
+      "magazine": ["7Rnd Kolt 1911 Magazine"],
+      "optics": [],
+      "buttstock": [],
+      "muzzle": ["Pistol Suppressor", "Plastic Bottle Suppressor"],
+      "handguard": [],
+      "illumination": ["Pistol Flashlight"]
+    }
+  },
+  "SK_59_66": {
+    "niceName": "SK 59/66",
+    "image": "SK_59_66.webp",
+    "description": "A ten-shot semi-automatic rifle, fed from an internal magazine. Older model, but still reliable. Uses 7.62x39mm rounds. ",
+    "ammo": ["7.62x39mm Rounds", "7.62x39mm Tracer Rounds"],
+    "attatchments": {
+      "magazine": [],
+      "optics": ["PU Scope"],
+      "buttstock": [],
+      "muzzle": ["Plastic Bottle Suppressor", "SK 59/66 Bayonet"],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "KAS-74U": {
+    "niceName": "KAS-74U",
+    "image": "KAS-74U.webp",
+    "description": "Selective-fire assault rifle fed from a detachable magazine. Shortened version of KA-74 with some compatible attachments. Uses 5.45x39mm rounds. ",
+    "ammo": ["5.45x39mm Rounds", "5.45x39mm Tracer Rounds"],
+    "attatchments": {
+      "magazine": ["30Rnd KA-74 Mag", "45Rnd KA-74 Mag"],
+      "optics": [],
+      "buttstock": [
+        "KA Wooden Buttstock",
+        "KA Lightweight Buttstock",
+        "KA Polymer Buttstock",
+        "KAS-74U Lightweight Buttstock"
+      ],
+      "muzzle": ["Normalized Suppressor", "Plastic Bottle Suppressor"],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "VSS": {
+    "niceName": "VSS",
+    "image": "VSS.webp",
+    "description": "Selective-fire integrally suppressed marksmen rifle, fed from a detachable magazine. Compatible with KA scopes. Uses 9x39mm rounds. ",
+    "ammo": ["9x39mm Rounds", "9x39mm Armor-Piercing"],
+    "attatchments": {
+      "magazine": ["10rd VSS Mag", "20rd SVAL Mag"],
+      "optics": ["East Optics"],
+      "buttstock": [],
+      "muzzle": [],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "Sawed-off_BK-43": {
+    "niceName": "Sawed-off BK-43",
+    "image": "Sawed-off_BK-43.webp",
+    "description": "Sawed-off double-barreled break-action shotgun. Old and reliable design, capable of firing both barrels simultaneously. Uses both 12ga bucks and slugs. ",
+    "ammo": ["12ga 00 Buckshots", "12ga Rifled Slugs", "12ga Rubber Slugs"],
+    "attatchments": {
+      "magazine": [],
+      "optics": [],
+      "buttstock": [],
+      "muzzle": [],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "Sawed-off_Mosin_91_30": {
+    "niceName": "Sawed-off Mosin 91/30",
+    "image": "Sawed-off_Mosin_91_30.webp",
+    "description": "Sawed-off five shot bolt-action rifle, fed from internal magazine. Still usable today due to its sturdiness. Uses 7.62x54mmR rounds. ",
+    "ammo": ["7.62x54mmR Rounds", "7.62x54mmR Tracer Rounds"],
+    "attatchments": {
+      "magazine": [],
+      "optics": ["PU Scope"],
+      "buttstock": [],
+      "muzzle": [],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "Repeater_Carbine": {
+    "niceName": "Repeater Carbine",
+    "image": "Repeater_Carbine.webp",
+    "description": "Seven-shot lever-action carbine, fed from an internal magazine. Proven and reliable, with a dash of the Old West style. Uses .357 rounds. ",
+    "ammo": [".357 Rounds"],
+    "attatchments": {
+      "magazine": [],
+      "optics": [],
+      "buttstock": [],
+      "muzzle": ["Plastic Bottle Suppressor"],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "SG5-K": {
+    "niceName": "SG5-K",
+    "image": "SG5-K.webp",
+    "description": "Selective-fire submachine gun, fed from a detachable magazine. Very high rate of fire. Uses 9×19mm rounds. ",
+    "ammo": ["9x19mm Rounds"],
+    "attatchments": {
+      "magazine": ["15rd SG5-K Mag", "30rd SG5-K Mag"],
+      "optics": [
+        "Baraka Sights",
+        "Combat Sights",
+        "RVN Sights",
+        "ATOG 4x32 Scope",
+        "ATOG 6x48 Scope",
+        "NV-PVS4 Scope"
+      ],
+      "buttstock": ["SG5-K Lightweight Buttstock"],
+      "muzzle": [
+        "Pistol Suppressor",
+        "SG5-K Compensator",
+        "Plastic Bottle Suppressor"
+      ],
+      "handguard": ["SG5-K Polymer Handguard", "SG5-K Rail Handguard"],
+      "illumination": ["Universal Flashlight"]
+    }
+  },
+  "VSD": {
+    "niceName": "VSD",
+    "image": "VSD.webp",
+    "description": "Semi-automatic marksmen rifle fed from a detachable magazine. Compatible with KA scopes. Uses 7.62x54mmR rounds. ",
+    "ammo": ["7.62x54mmR Rounds", "7.62x54mmR Tracer Rounds"],
+    "attatchments": {
+      "magazine": ["10rd VSD Mag"],
+      "optics": ["East Optics"],
+      "buttstock": [],
+      "muzzle": ["Normalized Suppressor", "Plastic Bottle Suppressor"],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "Blaze": {
+    "niceName": "Blaze",
+    "image": "Blaze.webp",
+    "description": "Double-barreled break-action rifle loaded with two .308 WIN rounds. ",
+    "ammo": [".308 WIN Rounds", ".308 WIN Tracer Rounds"],
+    "attatchments": {
+      "magazine": [],
+      "optics": ["Hunting Scope"],
+      "buttstock": [],
+      "muzzle": [],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "Sporter_22": {
+    "niceName": "Sporter 22",
+    "image": "Sporter_22.webp",
+    "description": "Semi-automatic rifle, fed from a detachable magazine. Great for recreational activities, like target shooting, plinking, and even small-game hunting. Uses .22 LR rounds. ",
+    "ammo": [".22 LR Rounds"],
+    "attatchments": {
+      "magazine": ["15rd .22 Mag", "30rd .22 Mag"],
+      "optics": ["Hunting Scope"],
+      "buttstock": [],
+      "muzzle": ["Improvised Suppressor"],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "LAR": {
+    "niceName": "LAR",
+    "image": "LAR.webp",
+    "description": "",
+    "ammo": [".308 WIN Rounds.308 WIN Tracer Rounds"],
+    "attatchments": {
+      "magazine": ["20rd LAR Mag"],
+      "optics": [
+        "ATOG 4x32 Scope",
+        "ATOG 6x48 Scope",
+        "Baraka Sights",
+        "Combat Sights",
+        "NV-PVS4 Scope",
+        "RVN Sights"
+      ],
+      "buttstock": ["LAR Lightweight Buttstock", "LAR Polymer Buttstock"],
+      "muzzle": ["Plastic Bottle Suppressor"],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "AUR_AX": {
+    "niceName": "AUR AX",
+    "image": "AUR_AX.webp",
+    "description": "A selective fire bullpup weapon. A modern variant of the AUR A1. The railing on the top and the magazine docking system have been adapted to work with standard western accessories. Uses 5.56x45mm rounds. ",
+    "ammo": ["5.56x45mm Rounds", "5.56x45mm Tracer Rounds"],
+    "attatchments": {
+      "magazine": [
+        "30rd AUR Mag",
+        "30rd Standardized Mag",
+        "30rd Coupled Standardized Mag",
+        "60rd Standardized Mag",
+        "10rd Mag-C Mag",
+        "20rd Mag-C Mag",
+        "30rd Mag-C Mag",
+        "40rd Mag-C Mag"
+      ],
+      "optics": [
+        "Baraka Sights",
+        "Combat Sights",
+        "RVN Sights",
+        "ATOG 4x32 Scope",
+        "ATOG 6x48 Scope",
+        "NV-PVS4 Scope"
+      ],
+      "buttstock": [],
+      "muzzle": ["Standardized Suppressor", "Plastic Bottle Suppressor"],
+      "handguard": [],
+      "illumination": ["Universal Flashlight"]
+    }
+  },
+  "Pioneer": {
+    "niceName": "Pioneer",
+    "image": "Pioneer.webp",
+    "description": "The Pioneer is a versatile, accurate and light-weight bolt-action rifle, used by the special police units. Uses 5.56x45mm rounds. ",
+    "ammo": ["5.56x45mm Rounds", "5.56x45mm Tracer Rounds"],
+    "attatchments": {
+      "magazine": ["5rd Pioneer Mag"],
+      "optics": [
+        "Baraka Sights",
+        "Combat Sights",
+        "RVN Sights",
+        "ATOG 4x32 Scope",
+        "ATOG 6x48 Scope",
+        "NV-PVS4 Scope"
+      ],
+      "buttstock": [],
+      "muzzle": ["Standardized Suppressor", "Plastic Bottle Suppressor"],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "M16-A2": {
+    "niceName": "M16-A2",
+    "image": "M16-A2.webp",
+    "description": "Selective-fire assault rifle, fed from a standardized detachable magazine. Although it lacks support for custom optics, the long barrel and high rate of fire offer remarkable firepower. Uses 5.56x45mm rounds. ",
+    "ammo": ["5.56x45mm Rounds", "5.56x45mm Tracer Rounds"],
+    "attatchments": {
+      "magazine": [
+        "10rd Mag-C Magazine",
+        "20rd Mag-C Magazine",
+        "30rd Mag-C Magazine",
+        "30rd Standardized Mag",
+        "40rd Mag-C Magazine",
+        "60rd Standardized Mag"
+      ],
+      "optics": [],
+      "buttstock": [],
+      "muzzle": ["Standardized Suppressor", "Plastic Bottle Suppressor"],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "M4-A1": {
+    "niceName": "M4-A1",
+    "image": "M4-A1.webp",
+    "description": "",
+    "ammo": ["5.56x45mm Rounds5.56x45mm Tracer Rounds"],
+    "attatchments": {
+      "magazine": [
+        "10rd Mag-C Mag",
+        "20rd Mag-C Mag",
+        "30rd Mag-C Mag",
+        "30rd Standardized Mag",
+        "40rd Mag-C Mag",
+        "60rd Standardized Mag"
+      ],
+      "optics": [
+        "ATOG 4x32 Scope",
+        "ATOG 6x48 Scope",
+        "Baraka Sights",
+        "Combat Sights",
+        "NV-PVS4 Scope",
+        "RVN Sights",
+        "Backup Iron Sights",
+        "M4-A1 Carry Handle Sights"
+      ],
+      "buttstock": [
+        "M4-A1 CQB Buttstock",
+        "M4-A1 MP Buttstock",
+        "M4-A1 Telescopic Buttstock"
+      ],
+      "muzzle": ["Standardized Suppressor", "Plastic Bottle Suppressor"],
+      "handguard": [
+        "M4-A1 MP Handguard",
+        "M4-A1 Polymer Handguard",
+        "M4-A1 Rail Handguard"
+      ],
+      "illumination": ["Universal Flashlight"]
+    }
+  },
+  "KA-74": {
+    "niceName": "KA-74",
+    "image": "KA-74.webp",
+    "description": "Selective-fire assault rifle fed from a detachable magazine. Replacement of KA-M with compatible attachments. Uses 5.45x39mm rounds. ",
+    "ammo": ["5.45x39mm Rounds", "5.45x39mm Tracer Rounds"],
+    "attatchments": {
+      "magazine": ["30Rnd KA-74 Mag", "45Rnd KA-74 Mag"],
+      "optics": ["East Optics"],
+      "buttstock": [
+        "KA Wooden Buttstock",
+        "KA Lightweight Buttstock",
+        "KA Polymer Buttstock",
+        "KAS-74U Lightweight Buttstock"
+      ],
+      "muzzle": ["Normalized Suppressor", "Plastic Bottle Suppressor"],
+      "handguard": [
+        "KA Wooden Handguard",
+        "KA Polymer Handguard",
+        "KA Rail Handguard"
+      ],
+      "illumination": ["Universal Flashlight"]
+    }
+  },
+  "Mlock-91": {
+    "niceName": "Mlock-91",
+    "image": "Mlock-91.webp",
+    "description": "Semi-automatic pistol, fed from a detachable magazine. Affordable and compact, it's very popular. Uses 9x19mm rounds. ",
+    "ammo": ["9x19mm Rounds"],
+    "attatchments": {
+      "magazine": ["Mlock-91 Mag"],
+      "optics": ["Mini Sights"],
+      "buttstock": [],
+      "muzzle": ["Pistol Suppressor", "Plastic Bottle Suppressor"],
+      "handguard": [],
+      "illumination": ["Pistol Flashlight"]
+    }
+  },
+  "M70_Tundra": {
+    "niceName": "M70 Tundra",
+    "image": "M70_Tundra.webp",
+    "description": "Five shot bolt-action hunting rifle, fed from an internal magazine. Reliability and high performance of a proven design. Uses .308 WIN rounds. ",
+    "ammo": [".308 WIN Rounds", ".308 WIN Tracer Rounds"],
+    "attatchments": {
+      "magazine": [],
+      "optics": ["Hunting Scope"],
+      "buttstock": [],
+      "muzzle": ["Plastic Bottle Suppressor"],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "Sawed-off_Blaze": {
+    "niceName": "Sawed-off Blaze",
+    "image": "Sawed-off_Blaze.webp",
+    "description": "Sawed-off double-barreled break-action rifle loaded with two .308 WIN rounds. ",
+    "ammo": [".308 WIN Rounds", ".308 WIN Tracer Rounds"],
+    "attatchments": {
+      "magazine": [],
+      "optics": ["Hunting Scope"],
+      "buttstock": [],
+      "muzzle": [],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "Sawed-off_BK-18": {
+    "niceName": "Sawed-off BK-18",
+    "image": "Sawed-off_BK-18.webp",
+    "description": "Sawed-off single shot break action hunting rifle, designed with simplicity, built to last. Uses 7.62x39mm rounds. ",
+    "ammo": ["7.62x39mm Rounds", "7.62x39mm Tracer Rounds"],
+    "attatchments": {
+      "magazine": [],
+      "optics": [],
+      "buttstock": [],
+      "muzzle": [],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "CR-527": {
+    "niceName": "CR-527",
+    "image": "CR-527.webp",
+    "description": "A bolt-action hunting rifle, fed from a detachable magazine. It is light and accurate at intermediate ranges. Uses 7.62x39mm rounds. ",
+    "ammo": ["7.62x39mm Rounds", "7.62x39mm Tracer Rounds"],
+    "attatchments": {
+      "magazine": ["5rd CR-527 Mag"],
+      "optics": ["Hunting Scope"],
+      "buttstock": [],
+      "muzzle": ["Plastic Bottle Suppressor"],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "SVAL": {
+    "niceName": "SVAL",
+    "image": "SVAL.webp",
+    "description": "A derivative of the VSS, outfitted to support universal attachments. Uses 9x39mm rounds. ",
+    "ammo": ["9x39mm Rounds", "9x39mm Armor-Piercing"],
+    "attatchments": {
+      "magazine": ["20rd SVAL Mag", "10rd VSS Mag"],
+      "optics": [
+        "Baraka Sights",
+        "Combat Sights",
+        "RVN Sights",
+        "ATOG 4x32 Scope",
+        "ATOG 6x48 Scope",
+        "NV-PVS4 Scope"
+      ],
+      "buttstock": [],
+      "muzzle": [],
+      "handguard": [],
+      "illumination": ["Universal Flashlight"]
+    }
+  },
+  "KA-M": {
+    "niceName": "KA-M",
+    "image": "KA-M.webp",
+    "description": "Selective-fire assault rifle fed from a detachable magazine. Modernized version of classic KA-47 with lot of attachments available. Uses 7.62x39mm rounds. ",
+    "ammo": ["7.62x39mm Rounds", "7.62x39mm Tracer Rounds"],
+    "attatchments": {
+      "magazine": [
+        "30rd KA-M Mag",
+        "30rd KA-M Polymer Mag",
+        "75rd KA-M Drum Mag"
+      ],
+      "optics": ["East Optics"],
+      "buttstock": [
+        "KA Wooden Buttstock",
+        "KA Lightweight Buttstock",
+        "KA Polymer Buttstock",
+        "KAS-74U Lightweight Buttstock"
+      ],
+      "muzzle": ["Normalized Suppressor", "Plastic Bottle Suppressor"],
+      "handguard": [
+        "KA Wooden Handguard",
+        "KA Polymer Handguard",
+        "KA Rail Handguard"
+      ],
+      "illumination": ["Universal Flashlight"]
+    }
+  },
+  "Mosin_91_30": {
+    "niceName": "Mosin 91/30",
+    "image": "Mosin_91_30.webp",
+    "description": "Five shot bolt-action rifle, fed from internal magazine. Still usable today due to its sturdiness. Uses 7.62x54mmR rounds. ",
+    "ammo": ["7.62x54mmR Rounds", "7.62x54mmR Tracer Rounds"],
+    "attatchments": {
+      "magazine": [],
+      "optics": ["PU Scope"],
+      "buttstock": [],
+      "muzzle": ["Plastic Bottle Suppressor", "M91 Bayonet"],
+      "handguard": [],
+      "illumination": []
+    }
+  },
+  "BK-18": {
+    "niceName": "BK-18",
+    "image": "BK-18.webp",
+    "description": "Single shot break action hunting rifle. Designed with simplicity, built to last. Uses 7.62x39mm rounds. ",
+    "ammo": ["7.62x39mm Rounds", "7.62x39mm Tracer Rounds"],
+    "attatchments": {
+      "magazine": [],
+      "optics": [],
+      "buttstock": [],
+      "muzzle": [],
+      "handguard": [],
+      "illumination": []
+    }
+  }
+}
