@@ -1,308 +1,340 @@
 <template>
   <div class="editor-row" :class="{ isSelected: selected }" @click="select">
     <div className="table-name editor-cell">{{ name }}</div>
-    <div className="table-nominal editor-cell" v-if="display.nominal">
+    <div
+      className="table-nominal editor-cell"
+      v-if="globalStore.columnVisibility.nominal"
+    >
       <InputNumber :value="nominal" @change="updateNominal" />
     </div>
-    <div className="table-lifetime editor-cell" v-if="display.lifetime">
-      <InputNumber :value="lifetime" @change="updateLifetime" />
-    </div>
-    <div className="table-restock editor-cell" v-if="display.restock">
-      <InputNumber :value="restock" @change="updateRestock" />
-    </div>
-    <div className="table-min editor-cell" v-if="display.min">
+    <div
+      className="table-min editor-cell"
+      v-if="globalStore.columnVisibility.min"
+    >
       <InputNumber :value="min" @change="updateMin" />
     </div>
-    <div className="table-quant editor-cell no-border" v-if="display.quantity">
+    <div
+      className="table-lifetime editor-cell"
+      v-if="globalStore.columnVisibility.lifetime"
+    >
+      <InputNumber :value="lifetime" @change="updateLifetime" />
+    </div>
+    <div
+      className="table-restock editor-cell"
+      v-if="globalStore.columnVisibility.restock"
+    >
+      <InputNumber :value="restock" @change="updateRestock" />
+    </div>
+
+    <div
+      className="table-quant editor-cell no-border"
+      v-if="globalStore.columnVisibility.quantity"
+    >
       <InputNumber
         :value="qmin"
+        min="0"
+        max="100"
         @change="updateQmin"
         :disabled="qmin === '-1'"
       />
     </div>
-    <div className="table-quant editor-cell" v-if="display.quantity">
+    <div
+      className="table-quant editor-cell"
+      v-if="globalStore.columnVisibility.quantity"
+    >
       <InputNumber
         :value="qmax"
-        @change="updateQmin"
+        min="0"
+        max="100"
+        @change="updateQmax"
         :disabled="qmax === '-1'"
       />
     </div>
-    <div className="table-cost editor-cell " v-if="display.cost">
+    <div
+      className="table-cost editor-cell "
+      v-if="globalStore.columnVisibility.cost"
+    >
       {{ cost }}
     </div>
     <div
       className="table-tag editor-cell no-border justify-center"
-      v-if="display.flags"
+      v-if="globalStore.columnVisibility.flags"
     >
       <input
         type="checkbox"
         :checked="countInCargo"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updateCargo"
       />
     </div>
     <div
       className="table-tag editor-cell no-border justify-center"
-      v-if="display.flags"
+      v-if="globalStore.columnVisibility.flags"
     >
       <input
         type="checkbox"
         :checked="countInHoarder"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updateHoarder"
       />
     </div>
     <div
       className="table-tag editor-cell no-border justify-center"
-      v-if="display.flags"
+      v-if="globalStore.columnVisibility.flags"
     >
       <input
         type="checkbox"
         :checked="countInMap"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updateMap"
       />
     </div>
     <div
       className="table-tag editor-cell no-border justify-center"
-      v-if="display.flags"
+      v-if="globalStore.columnVisibility.flags"
     >
       <input
         type="checkbox"
         :checked="countInPlayer"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updatePlayer"
       />
     </div>
     <div
       className="table-tag editor-cell no-border justify-center"
-      v-if="display.flags"
+      v-if="globalStore.columnVisibility.flags"
     >
       <input
         type="checkbox"
         :checked="crafted"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updateCrafted"
       />
     </div>
-    <div className="table-tag editor-cell justify-center" v-if="display.flags">
+    <div
+      className="table-tag editor-cell justify-center"
+      v-if="globalStore.columnVisibility.flags"
+    >
       <input
         type="checkbox"
         :checked="deloot"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updateDeloot"
       />
     </div>
-    <div className="table-category editor-cell" v-if="display.category">
+    <div
+      className="table-category editor-cell"
+      v-if="globalStore.columnVisibility.category"
+    >
       <!-- {{ capitalize(category[0]) }} -->
       {{ subCategory }}
     </div>
     <div
       className="table-usage table-name-coast editor-cell no-border justify-center"
-      v-if="display.usage"
+      v-if="globalStore.columnVisibility.usage"
     >
       <input
         type="checkbox"
         v-model="areas.coast"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updateUsage"
       />
     </div>
     <div
       className="table-usage table-name-farm editor-cell no-border justify-center"
-      v-if="display.usage"
+      v-if="globalStore.columnVisibility.usage"
     >
       <input
         type="checkbox"
         v-model="areas.farm"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updateUsage"
       />
     </div>
     <div
       className="table-usage table-name-firefighter editor-cell no-border justify-center"
-      v-if="display.usage"
+      v-if="globalStore.columnVisibility.usage"
     >
       <input
         type="checkbox"
         v-model="areas.firefighter"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updateUsage"
       />
     </div>
     <div
       className="table-usage table-name-hunting editor-cell no-border justify-center"
-      v-if="display.usage"
+      v-if="globalStore.columnVisibility.usage"
     >
       <input
         type="checkbox"
         v-model="areas.hunting"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updateUsage"
       />
     </div>
     <div
       className="table-usage table-name-industrial editor-cell no-border justify-center"
-      v-if="display.usage"
+      v-if="globalStore.columnVisibility.usage"
     >
       <input
         type="checkbox"
         v-model="areas.industrial"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updateUsage"
       />
     </div>
     <div
       className="table-usage table-name-medic editor-cell no-border justify-center"
-      v-if="display.usage"
+      v-if="globalStore.columnVisibility.usage"
     >
       <input
         type="checkbox"
         v-model="areas.medic"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updateUsage"
       />
     </div>
     <div
       className="table-usage table-name-military editor-cell no-border justify-center"
-      v-if="display.usage"
+      v-if="globalStore.columnVisibility.usage"
     >
       <input
         type="checkbox"
         v-model="areas.military"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updateUsage"
       />
     </div>
     <div
       className="table-usage table-name-office editor-cell no-border justify-center"
-      v-if="display.usage"
+      v-if="globalStore.columnVisibility.usage"
     >
       <input
         type="checkbox"
         v-model="areas.office"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updateUsage"
       />
     </div>
     <div
       className="table-usage table-name-police editor-cell no-border justify-center"
-      v-if="display.usage"
+      v-if="globalStore.columnVisibility.usage"
     >
       <input
         type="checkbox"
         v-model="areas.police"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updateUsage"
       />
     </div>
     <div
       className="table-usage table-name-prison editor-cell no-border justify-center"
-      v-if="display.usage"
+      v-if="globalStore.columnVisibility.usage"
     >
       <input
         type="checkbox"
         v-model="areas.prison"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updateUsage"
       />
     </div>
     <div
       className="table-usage table-name-school editor-cell no-border justify-center"
-      v-if="display.usage"
+      v-if="globalStore.columnVisibility.usage"
     >
       <input
         type="checkbox"
         v-model="areas.school"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updateUsage"
       />
     </div>
     <div
       className="table-usage table-name-town editor-cell no-border justify-center"
-      v-if="display.usage"
+      v-if="globalStore.columnVisibility.usage"
     >
       <input
         type="checkbox"
         v-model="areas.town"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updateUsage"
       />
     </div>
     <div
       className="table-usage table-name-village editor-cell no-border justify-center"
-      v-if="display.usage"
+      v-if="globalStore.columnVisibility.usage"
     >
       <input
         type="checkbox"
         v-model="areas.village"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updateUsage"
       />
     </div>
     <div
       className="table-usage table-name-contaminated editor-cell no-border justify-center"
-      v-if="display.usage"
+      v-if="globalStore.columnVisibility.usage"
     >
       <input
         type="checkbox"
         v-model="areas.contaminated"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updateUsage"
       />
     </div>
     <div
       className="table-usage table-name-contaminated editor-cell justify-center"
-      v-if="display.usage"
+      v-if="globalStore.columnVisibility.usage"
     >
       <input
         type="checkbox"
         v-model="areas.underground"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updateUsage"
       />
     </div>
     <div
       className="table-value editor-cell no-border justify-center"
-      v-if="display.value"
+      v-if="globalStore.columnVisibility.value"
     >
       <input
         type="checkbox"
         v-model="tier.tier1"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updateTier"
       />
     </div>
     <div
       className="table-value editor-cell no-border justify-center"
-      v-if="display.value"
+      v-if="globalStore.columnVisibility.value"
     >
       <input
         type="checkbox"
         v-model="tier.tier2"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updateTier"
       />
     </div>
     <div
       className="table-value editor-cell no-border justify-center"
-      v-if="display.value"
+      v-if="globalStore.columnVisibility.value"
     >
       <input
         type="checkbox"
         v-model="tier.tier3"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updateTier"
       />
     </div>
     <div
       className="table-value editor-cell justify-center"
-      v-if="display.value"
+      v-if="globalStore.columnVisibility.value"
     >
       <input
         type="checkbox"
         v-model="tier.unique"
-        className="checkbox"
+        className="checkbox checkbox-sm"
         @change="updateTier"
       />
     </div>
@@ -416,8 +448,8 @@
   const updateNominal = (e) => {
     globalStore.liveData[id.value].nominal = e.target.value;
     if (
-      globalStore.liveData[id.value].min >
-      globalStore.liveData[id.value].nominal
+      +globalStore.liveData[id.value].min >
+      +globalStore.liveData[id.value].nominal
     ) {
       globalStore.liveData[id.value].min =
         globalStore.liveData[id.value].nominal;
@@ -431,12 +463,33 @@
   };
   const updateMin = (e) => {
     globalStore.liveData[id.value].min = e.target.value;
+    if (
+      +globalStore.liveData[id.value].min >=
+      +globalStore.liveData[id.value].nominal
+    ) {
+      const numberFix = +globalStore.liveData[id.value].min + 1;
+      globalStore.liveData[id.value].nominal = numberFix.toString();
+    }
   };
   const updateQmin = (e) => {
-    globalStore.liveData[id.value].qmin = e.target.value;
+    globalStore.liveData[id.value].quantmin = e.target.value;
+    if (
+      +globalStore.liveData[id.value].quantmin >
+      +globalStore.liveData[id.value].quantmax
+    ) {
+      globalStore.liveData[id.value].quantmax =
+        globalStore.liveData[id.value].quantmin;
+    }
   };
   const updateQmax = (e) => {
-    globalStore.liveData[id.value].qmax = e.target.value;
+    globalStore.liveData[id.value].quantmax = e.target.value;
+    if (
+      +globalStore.liveData[id.value].quantmax <
+      +globalStore.liveData[id.value].quantmin
+    ) {
+      globalStore.liveData[id.value].quantmin =
+        globalStore.liveData[id.value].quantmax;
+    }
   };
   const updateCargo = (e) => {
     globalStore.liveData[id.value].countInCargo = e.target.checked;

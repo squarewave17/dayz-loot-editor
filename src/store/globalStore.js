@@ -1,8 +1,6 @@
 import { defineStore } from "pinia";
-import useFileSystem from "../composables/useFileSystem";
 import useSystemDetect from "../composables/useSystemDetect";
 import useDataConversion from "../composables/useDataConversion";
-import { useStorage } from "@vueuse/core";
 
 export const useGlobalStore = defineStore("globalStore", {
   state: () => {
@@ -15,42 +13,88 @@ export const useGlobalStore = defineStore("globalStore", {
       realData: "",
       stockData: [],
       liveData: [],
+      wasClean: false,
+      refFile: "livonia",
       currentSelection: 0,
+      columnVisibility: {
+        nominal: true,
+        lifetime: true,
+        restock: true,
+        min: true,
+        quantity: true,
+        cost: false,
+        flags: true,
+        category: true,
+        tag: true,
+        usage: true,
+        value: true,
+      },
+      categoryFilter: {
+        guns: true,
+        ammo: true,
+        "gun accesories": true,
+        explosives: true,
+        food: true,
+        clothes: true,
+        tools: true,
+        containers: true,
+        animals: true,
+        medical: true,
+        vehicles: true,
+        zombies: true,
+        vehiclesparts: true,
+        "show everything": false,
+      },
+      search: "",
     };
   },
   actions: {
-    async initStore(data) {
-      // const localState = useStorage("dayz-loot-session", {});
+    initStore() {
       const { isBrowser, isSsl } = useSystemDetect();
       this.browser = isBrowser();
       this.protocol = isSsl();
-      // console.log(localState.value);
-      const test = await fetch("dayzStock/types.xml").then((response) =>
-        response.text()
-      );
-      this.stockData = await this.processInputData(test);
     },
     async loadFile(file) {
       this.isLoading = true;
 
-      const globalStore = useGlobalStore();
-      const fileSystem = useFileSystem();
+      await this.loadRef();
+
+      const data = file;
+      this.initRealData(data);
+      this.isLoading = false;
+      this.hasData = true;
+    },
+    initRealData(data) {
       const { toJSON, toLiveData } = useDataConversion();
-
-      let data;
-      if (!globalStore.fileAccess) {
-        data = file;
-      } else {
-        data = await fileSystem.loadData();
-      }
-
       this.realData = toJSON(data);
 
       this.liveData = this.realData.types.type.map((entry, index) => {
         return toLiveData(entry, index);
       });
-      this.isLoading = false;
+    },
+    async startClean() {
+      console.log("clean from store");
+      await this.loadRef();
+      this.liveData = JSON.parse(JSON.stringify(this.stockData));
       this.hasData = true;
+    },
+    async loadRef() {
+      let data;
+      if (this.refFile !== "custom") {
+        data = await fetch(`dayzStock/${this.refFile}/types.xml`).then(
+          (response) => response.text()
+        );
+        this.stockData = await this.processInputData(data);
+        if (this.wasClean) {
+          this.initRealData(data);
+        }
+      }
+    },
+    async loadCustomRef(file) {
+      let data = file;
+      this.stockData = await this.processInputData(data);
+
+      this.initRealData(data);
     },
     async prepareSave() {
       const { toRealData, toXML } = useDataConversion();

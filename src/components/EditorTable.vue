@@ -4,195 +4,202 @@
       <div className="table-name editor-cell header-cell">Name</div>
       <div
         className="table-nominal editor-cell header-cell"
-        v-show="display.nominal"
+        v-show="globalStore.columnVisibility.nominal"
       >
         Nominal
       </div>
       <div
+        className="table-min editor-cell header-cell"
+        v-show="globalStore.columnVisibility.min"
+      >
+        Min
+      </div>
+      <div
         className="table-lifetime editor-cell header-cell"
-        v-show="display.lifetime"
+        v-show="globalStore.columnVisibility.lifetime"
       >
         Lifetime
       </div>
       <div
         className="table-restock editor-cell header-cell"
-        v-show="display.restock"
+        v-show="globalStore.columnVisibility.restock"
       >
         Restock
       </div>
-      <div className="table-min editor-cell header-cell" v-show="display.min">
-        Min
-      </div>
+
       <div
         className="table-quant editor-cell header-cell no-border"
-        v-show="display.quantity"
+        v-show="globalStore.columnVisibility.quantity"
       >
         QMin
       </div>
       <div
         className="table-quant editor-cell header-cell"
-        v-show="display.quantity"
+        v-show="globalStore.columnVisibility.quantity"
       >
         QMax
       </div>
-      <div className="table-cost editor-cell header-cell" v-show="display.cost">
+      <div
+        className="table-cost editor-cell header-cell"
+        v-show="globalStore.columnVisibility.cost"
+      >
         Cost
       </div>
       <div
         className="table-tag editor-cell header-cell no-border justify-center"
-        v-show="display.flags"
+        v-show="globalStore.columnVisibility.flags"
       >
         Cargo
       </div>
       <div
         className="table-tag editor-cell header-cell no-border justify-center"
-        v-show="display.flags"
+        v-show="globalStore.columnVisibility.flags"
       >
         Hoarder
       </div>
       <div
         className="table-tag editor-cell header-cell no-border justify-center"
-        v-show="display.flags"
+        v-show="globalStore.columnVisibility.flags"
       >
         Map
       </div>
       <div
         className="table-tag editor-cell header-cell no-border justify-center"
-        v-show="display.flags"
+        v-show="globalStore.columnVisibility.flags"
       >
         Player
       </div>
       <div
         className="table-tag editor-cell header-cell no-border justify-center"
-        v-show="display.flags"
+        v-show="globalStore.columnVisibility.flags"
       >
         Crafted
       </div>
       <div
         className="table-tag editor-cell header-cell justify-center"
-        v-show="display.flags"
+        v-show="globalStore.columnVisibility.flags"
       >
         Deloot
       </div>
       <div
         className="table-category editor-cell header-cell"
-        v-show="display.category"
+        v-show="globalStore.columnVisibility.category"
       >
         Category
       </div>
       <!-- usage -->
       <div
         className="table-usage table-name-coast editor-cell header-cell no-border justify-center"
-        v-show="display.usage"
+        v-show="globalStore.columnVisibility.usage"
       >
         Coast
       </div>
       <div
         className="table-usage table-name-farm editor-cell header-cell no-border justify-center"
-        v-show="display.usage"
+        v-show="globalStore.columnVisibility.usage"
       >
         Farm
       </div>
       <div
         className="table-usage table-name-firefighter editor-cell header-cell no-border justify-center"
-        v-show="display.usage"
+        v-show="globalStore.columnVisibility.usage"
       >
         Firefighter
       </div>
       <div
         className="table-usage table-name-hunting editor-cell header-cell no-border justify-center"
-        v-show="display.usage"
+        v-show="globalStore.columnVisibility.usage"
       >
         Hunting
       </div>
       <div
         className="table-usage table-name-industrial editor-cell header-cell no-border justify-center"
-        v-show="display.usage"
+        v-show="globalStore.columnVisibility.usage"
       >
         Industrial
       </div>
       <div
         className="table-usage table-name-medic editor-cell header-cell no-border justify-center"
-        v-show="display.usage"
+        v-show="globalStore.columnVisibility.usage"
       >
         Medic
       </div>
       <div
         className="table-usage table-name-military editor-cell header-cell no-border justify-center"
-        v-show="display.usage"
+        v-show="globalStore.columnVisibility.usage"
       >
         Military
       </div>
       <div
         className="table-usage table-name-office editor-cell header-cell no-border justify-center"
-        v-show="display.usage"
+        v-show="globalStore.columnVisibility.usage"
       >
         Office
       </div>
       <div
         className="table-usage table-name-police editor-cell header-cell no-border justify-center"
-        v-show="display.usage"
+        v-show="globalStore.columnVisibility.usage"
       >
         Police
       </div>
       <div
         className="table-usage table-name-prison editor-cell header-cell no-border justify-center"
-        v-show="display.usage"
+        v-show="globalStore.columnVisibility.usage"
       >
         Prison
       </div>
       <div
         className="table-usage table-name-school editor-cell header-cell no-border justify-center"
-        v-show="display.usage"
+        v-show="globalStore.columnVisibility.usage"
       >
         School
       </div>
       <div
         className="table-usage table-name-town editor-cell header-cell no-border justify-center"
-        v-show="display.usage"
+        v-show="globalStore.columnVisibility.usage"
       >
         Town
       </div>
       <div
         className="table-usage table-name-village editor-cell header-cell no-border justify-center"
-        v-show="display.usage"
+        v-show="globalStore.columnVisibility.usage"
       >
         Village
       </div>
       <div
         className="table-usage table-name-contaminated editor-cell header-cell no-border justify-center"
-        v-show="display.usage"
+        v-show="globalStore.columnVisibility.usage"
       >
         Contaminated
       </div>
       <div
         className="table-usage table-name-contaminated editor-cell header-cell justify-center"
-        v-show="display.usage"
+        v-show="globalStore.columnVisibility.usage"
       >
         Underground
       </div>
       <!-- value -->
       <div
         className="table-value editor-cell header-cell no-border justify-center"
-        v-show="display.value"
+        v-show="globalStore.columnVisibility.value"
       >
         Tier1
       </div>
       <div
         className="table-value editor-cell header-cell no-border justify-center"
-        v-show="display.value"
+        v-show="globalStore.columnVisibility.value"
       >
         Tier2
       </div>
       <div
         className="table-value editor-cell header-cell no-border justify-center"
-        v-show="display.value"
+        v-show="globalStore.columnVisibility.value"
       >
         Tier3
       </div>
       <div
         className="table-value editor-cell header-cell justify-center"
-        v-show="display.value"
+        v-show="globalStore.columnVisibility.value"
       >
         Unique
       </div>
@@ -221,58 +228,9 @@
         :tag="data.tag"
         :usage="data.usage"
         :value="data.value"
-        :display="display"
       />
     </div>
   </div>
-  <teleport to="#main-left">
-    <div className="flex flex-col">
-      <h6 class="p-1">Columns</h6>
-      <ToggleControl
-        v-for="entry in Object.keys(display)"
-        :checked="display[entry]"
-        :label="entry"
-        v-model="display[entry]"
-      />
-    </div>
-  </teleport>
-  <teleport to="#main-right">
-    <div className="flex flex-col">
-      <h6 class="p-1">Category</h6>
-      <ToggleControl
-        v-for="entry in Object.keys(categoryFilter)"
-        :checked="categoryFilter[entry]"
-        :label="entry"
-        v-model="categoryFilter[entry]"
-      />
-    </div>
-  </teleport>
-  <teleport to="#main-top">
-    <div className="flex items-center w-full max-w-xs p-2">
-      <input
-        type="text"
-        placeholder="Search..."
-        className="input input-sm input-bordered w-full max-w-xs"
-        v-model="search"
-      />
-      <button className="btn btn-square btn-xs mx-2">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M6 18L18 6M6 6l12 12"
-          />
-        </svg>
-      </button>
-    </div>
-  </teleport>
 </template>
 
 <script setup>
@@ -287,59 +245,19 @@
   const globalStore = useGlobalStore();
   const liveData = globalStore.liveData;
 
-  /**
-   * search
-   */
-  const search = ref("");
-
-  /**
-   * Property Visibility
-   */
-  const display = reactive({
-    nominal: true,
-    lifetime: true,
-    restock: true,
-    min: true,
-    quantity: true,
-    cost: false,
-    flags: true,
-    category: true,
-    tag: true,
-    usage: true,
-    value: true,
-  });
-
-  /**
-   * Loot Filter
-   */
-  const categoryFilter = reactive({
-    guns: true,
-    ammo: true,
-    "gun accesories": true,
-    explosives: true,
-    food: true,
-    clothes: true,
-    tools: true,
-    containers: true,
-    animals: true,
-    medical: true,
-    vehicles: true,
-    zombies: true,
-    vehiclesparts: true,
-    "show everything": false,
-  });
-
   const data = computed(() => {
-    if (search.value.length > 0) {
+    if (globalStore.search.length > 0) {
       return liveData.filter((entry) => {
-        return entry.name.toLowerCase().includes(search.value.toLowerCase());
+        return entry.name
+          .toLowerCase()
+          .includes(globalStore.search.toLowerCase());
       });
     }
-    if (categoryFilter["show everything"]) {
+    if (globalStore.categoryFilter["show everything"]) {
       return liveData;
     }
     let filters = [];
-    for (const [key, value] of Object.entries(categoryFilter)) {
+    for (const [key, value] of Object.entries(globalStore.categoryFilter)) {
       if (value) {
         filters.push(key);
       }
@@ -395,40 +313,40 @@
   }
 
   .table-name {
-    min-width: 325px;
-    max-width: 325px;
+    min-width: 281px;
+    max-width: 281px;
   }
   .table-nominal {
-    min-width: 90px;
-    max-width: 90px;
+    min-width: 80px;
+    max-width: 80px;
   }
   .table-lifetime {
-    min-width: 150px;
-    max-width: 150px;
+    min-width: 115px;
+    max-width: 115px;
   }
   .table-restock {
-    min-width: 120px;
-    max-width: 120px;
+    min-width: 115px;
+    max-width: 115px;
   }
   .table-min {
-    min-width: 90px;
-    max-width: 90px;
+    min-width: 80px;
+    max-width: 80px;
   }
   .table-quant {
-    min-width: 102px;
-    max-width: 102px;
+    min-width: 80px;
+    max-width: 80px;
   }
   .table-cost {
     min-width: 66.5px;
     max-width: 66.5px;
   }
   .table-tag {
-    min-width: 100px;
-    max-width: 100px;
+    min-width: 67px;
+    max-width: 67px;
   }
   .table-category {
-    min-width: 153px;
-    max-width: 153px;
+    min-width: 130px;
+    max-width: 130px;
   }
   .table-usage {
     min-width: 66px;

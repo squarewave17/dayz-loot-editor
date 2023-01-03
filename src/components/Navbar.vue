@@ -3,9 +3,7 @@
     <div className="container mx-auto">
       <div className="flex px-2 mx-2 items-center">
         <Logo className="inline pr-2" />
-        <router-link
-          className="text-lg font-bold align-middle mx-2 text-xl"
-          to="/"
+        <router-link className="font-bold align-middle mx-2 text-xl" to="/"
           >Loot Editor</router-link
         >
       </div>
