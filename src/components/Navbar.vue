@@ -9,22 +9,20 @@
       </div>
       <div className="flex-1 px-2 mx-2">
         <div className="flex justify-end">
+          <router-link to="/"
+            ><button className="btn btn-ghost btn-sm rounded-btn">
+              Editor
+            </button></router-link
+          >
           <router-link to="/output"
             ><button className="btn btn-ghost btn-sm rounded-btn">
-              Test Output
+              Export
             </button></router-link
           >
-          <router-link to="/data"
+          <router-link to="/output"
             ><button className="btn btn-ghost btn-sm rounded-btn">
-              Live Data
-            </button></router-link
-          >
-          <button
-            className="btn btn-ghost btn-sm rounded-btn"
-            @click="globalStore.prepareSave()"
-          >
-            compile
-          </button>
+              <IconSettings /></button
+          ></router-link>
         </div>
       </div>
     </div>
@@ -34,5 +32,6 @@
 <script setup>
   import Logo from "../components/Logo.vue";
   import { useGlobalStore } from "../store/globalStore";
+  import IconSettings from "./icons/IconSettings.vue";
   const globalStore = useGlobalStore();
 </script>
